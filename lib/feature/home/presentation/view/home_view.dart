@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:image_generation/core/styles/text_style.dart';
-import 'widgets/custom_container.dart';
-import 'widgets/custom_icon.dart';
+import 'widgets/home_view_body.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -10,20 +8,14 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CustomIcon(),
-            SizedBox(height: 20),
-            Text("AI Image Generator", style: TextAppStyle.textStyle24),
-            Text(
-              'Transform your ideas into stunning image!',
-              style: TextAppStyle.textStyle14,
-            ),
-            CustomContainer(),
-          ],
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: HomeViewBody(),
+          ),
         ),
       ),
     );
   }
 }
+

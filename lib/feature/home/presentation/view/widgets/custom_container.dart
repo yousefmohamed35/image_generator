@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-
 import '../../../../../constants.dart';
-import '../../../../../core/styles/text_style.dart';
-import 'custom_text_field.dart';
+import 'image_describe_screen.dart';
 
 class CustomContainer extends StatelessWidget {
   const CustomContainer({super.key});
@@ -12,24 +10,12 @@ class CustomContainer extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(20),
         color: Constants.primaryColor.withOpacity(0.1),
         border: Border.all(color: Constants.primaryColor, width: 1),
       ),
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Icon(Icons.edit, color: Constants.primaryColor),
-              Text("Describe Your Vision", style: TextAppStyle.textStyle18),
-            ],
-          ),
-          CustomTextField(),
-        ],
-      ),
+      child: ImageDescribeScreen(),
     );
   }
-
-  
 }
 
