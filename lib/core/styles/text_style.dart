@@ -17,6 +17,11 @@ class TextAppStyle {
 
     color: Constants.greyColor,
   );
+  static final textStyle12 = TextStyle(
+    fontSize: 12,
+    fontStyle: FontStyle.italic,
+    color: Constants.greyColor,
+  );
   static final textStyle16 = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w600,

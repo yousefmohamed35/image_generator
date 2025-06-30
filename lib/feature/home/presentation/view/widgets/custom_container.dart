@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:image_generation/feature/home/presentation/view/widgets/generated_image_view.dart';
 import '../../../../../constants.dart';
-import 'image_describe_screen.dart';
 
 class CustomContainer extends StatelessWidget {
   const CustomContainer({super.key});
@@ -14,8 +14,7 @@ class CustomContainer extends StatelessWidget {
         color: Constants.primaryColor.withOpacity(0.1),
         border: Border.all(color: Constants.primaryColor, width: 1),
       ),
-      child: ImageDescribeScreen(),
+      child: GeneratedImageView(),
     );
   }
 }
-

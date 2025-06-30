@@ -4,21 +4,28 @@ import '../../constants.dart';
 import '../styles/text_style.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key});
-
+  const CustomButton({
+    super.key,
+    required this.title,
+    required this.icon,
+    required this.color,
+  });
+  final String title;
+  final IconData icon;
+  final Color color;
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: () {},
-      color: Constants.primaryColor,
+      color: color,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       padding: const EdgeInsets.all(16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.auto_awesome_rounded, color: Constants.whiteColor),
+          Icon(icon, color: Constants.whiteColor),
           SizedBox(width: 8),
-          Text("Generate", style: TextAppStyle.textStyle16),
+          Text(title, style: TextAppStyle.textStyle16),
         ],
       ),
     );
