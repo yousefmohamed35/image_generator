@@ -22,12 +22,12 @@ class GenerateimageCubit extends Cubit<GenerateimageState> {
   }
   void regenrate(){
     promptController.clear();
-    promptController.dispose();
+ 
     emit(GenerateimageInitial());
 
   }
 
   Future<void> saveImage(Uint8List image)async{
-
+    await homeRepo.saveImage(image);
   }
 }

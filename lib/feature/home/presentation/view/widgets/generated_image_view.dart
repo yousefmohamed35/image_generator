@@ -38,7 +38,9 @@ class GeneratedImageView extends StatelessWidget {
           children: [
             Expanded(
               child: CustomButton(
-                onPressed: () {},
+                onPressed: () async {
+                  await context.read<GenerateimageCubit>().saveImage(image);
+                },
                 title: 'Save',
                 icon: Icons.download,
                 color: Colors.lightBlue,
