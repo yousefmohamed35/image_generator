@@ -1,16 +1,17 @@
-# image_generation
+🖼️Image Generator App
+A Flutter app that allows users to describe their vision in text and generate images using the Pollinations AI API. Users can view, save, and share the generated images with ease.
 
-A new Flutter project.
+🚀 Features
+✅ Generate AI-powered images from text prompts
 
-## Getting Started
+💾 Save images to device gallery
 
-This project is a starting point for a Flutter application.
+📤 Share images with other apps
 
-A few resources to get you started if this is your first Flutter project:
+📱 Responsive UI
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+🔔 Snackbar feedback on actions
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+🧠 Uses Flutter BLoC for state management
+
+
