@@ -16,4 +16,9 @@ class HomeRepoImpl extends HomeRepo {
 
     return apiService.getImageBytes(prompt: fullPrompt);
   }
+  
+  @override
+  Future<void> saveImage(Uint8List image) {
+    final status 
+  }
 }
