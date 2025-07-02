@@ -52,7 +52,9 @@ class GeneratedImageView extends StatelessWidget {
             const SizedBox(width: 20),
             Expanded(
               child: CustomButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.read<GenerateimageCubit>().shareImage(image, context);
+                },
                 title: 'Share',
                 icon: Icons.share,
                 color: Colors.green,

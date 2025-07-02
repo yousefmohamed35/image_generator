@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -33,6 +34,18 @@ class GenerateimageCubit extends Cubit<GenerateimageState> {
     } on Exception catch (e) {
       // ignore: use_build_context_synchronously
       showSuccessMessage(context, 'Image not saved $e');
+    }
+  }
+
+  Future<void> shareImage(Uint8List image, BuildContext context) async {
+    try {
+      await homeRepo.shareImage(image);
+      // ignore: use_build_context_synchronously
+      showSuccessMessage(context, 'Image shared successfully');
+    } on Exception catch (e) {
+      // ignore: use_build_context_synchronously
+      showSuccessMessage(context, 'Image not shared $e');
+      log(e.toString());
     }
   }
 }
