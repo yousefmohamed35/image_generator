@@ -1,10 +1,7 @@
 import 'dart:developer';
 import 'dart:io';
 import 'dart:math' hide log;
-
 import 'dart:typed_data';
-import 'package:path_provider/path_provider.dart';
-
 import '../../../../core/service/api_service.dart';
 import 'home_repo.dart';
 
@@ -24,7 +21,6 @@ class HomeRepoImpl extends HomeRepo {
 
   @override
   Future<void> saveImage(Uint8List image) async {
-    try {
       final directory = Directory('/storage/emulated/0/Download/ai');
 
       final fileName =
@@ -32,8 +28,6 @@ class HomeRepoImpl extends HomeRepo {
       final file = File('${directory.path}/$fileName');
       await file.writeAsBytes(image);
       log("Image saved to ${file.path}");
-    } on Exception catch (e) {
-      log("Error saving image: $e");
-    }
+    
   }
 }
