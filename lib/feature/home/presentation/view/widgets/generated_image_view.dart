@@ -1,9 +1,12 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_generation/constants.dart';
 import 'package:image_generation/core/widgets/custom_button.dart';
 import 'package:image_generation/feature/home/presentation/view/widgets/descreptor_text.dart';
 import 'package:image_generation/feature/home/presentation/view/widgets/title_text.dart';
+
+import '../../manager/generateimage_cubit.dart';
 
 class GeneratedImageView extends StatelessWidget {
   const GeneratedImageView({super.key, required this.image});
@@ -16,14 +19,15 @@ class GeneratedImageView extends StatelessWidget {
         SizedBox(height: 10),
         ClipRRect(
           borderRadius: BorderRadius.circular(20),
-          child: Image.memory(
-            image,
-          ),
+          child: Image.memory(image),
         ),
         SizedBox(height: 10),
         DescreptorText(),
         SizedBox(height: 10),
         CustomButton(
+          onPressed: () {
+            context.read<GenerateimageCubit>().regenrate();
+          },
           title: 'Regenerate',
           icon: Icons.refresh,
           color: Constants.primaryColor,
@@ -34,6 +38,7 @@ class GeneratedImageView extends StatelessWidget {
           children: [
             Expanded(
               child: CustomButton(
+                onPressed: () {},
                 title: 'Save',
                 icon: Icons.download,
                 color: Colors.lightBlue,
@@ -42,6 +47,7 @@ class GeneratedImageView extends StatelessWidget {
             const SizedBox(width: 20),
             Expanded(
               child: CustomButton(
+                onPressed: () {},
                 title: 'Share',
                 icon: Icons.share,
                 color: Colors.green,
