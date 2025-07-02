@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-
 import '../../../../../core/styles/text_style.dart';
-import 'custom_container.dart';
 import 'custom_icon.dart';
+import 'generate_image_builder.dart';
+
 
 class HomeViewBody extends StatelessWidget {
-  const HomeViewBody({
-    super.key,
-  });
+  const HomeViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +20,9 @@ class HomeViewBody extends StatelessWidget {
           style: TextAppStyle.textStyle14,
         ),
         SizedBox(height: 20),
-        CustomContainer(),
+        GenerateImageBuilder(),
       ],
     );
   }
 }
+

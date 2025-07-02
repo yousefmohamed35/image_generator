@@ -1,3 +1,4 @@
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:image_generation/constants.dart';
 import 'package:image_generation/core/widgets/custom_button.dart';
@@ -5,8 +6,8 @@ import 'package:image_generation/feature/home/presentation/view/widgets/descrept
 import 'package:image_generation/feature/home/presentation/view/widgets/title_text.dart';
 
 class GeneratedImageView extends StatelessWidget {
-  const GeneratedImageView({super.key});
-
+  const GeneratedImageView({super.key, required this.image});
+  final Uint8List image;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -15,8 +16,8 @@ class GeneratedImageView extends StatelessWidget {
         SizedBox(height: 10),
         ClipRRect(
           borderRadius: BorderRadius.circular(20),
-          child: Image.network(
-            'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
+          child: Image.memory(
+            image,
           ),
         ),
         SizedBox(height: 10),

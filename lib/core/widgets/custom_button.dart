@@ -8,15 +8,16 @@ class CustomButton extends StatelessWidget {
     super.key,
     required this.title,
     required this.icon,
-    required this.color,
+    required this.color, this.onPressed,
   });
   final String title;
   final IconData icon;
   final Color color;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      onPressed: () {},
+      onPressed: onPressed,
       color: color,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       padding: const EdgeInsets.all(16),

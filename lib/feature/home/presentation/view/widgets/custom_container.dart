@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:image_generation/feature/home/presentation/view/widgets/generated_image_view.dart';
 import '../../../../../constants.dart';
 
 class CustomContainer extends StatelessWidget {
-  const CustomContainer({super.key});
-
+  const CustomContainer({super.key, required this.child});
+  final Widget child;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,7 +13,7 @@ class CustomContainer extends StatelessWidget {
         color: Constants.primaryColor.withOpacity(0.1),
         border: Border.all(color: Constants.primaryColor, width: 1),
       ),
-      child: GeneratedImageView(),
+      child:child,
     );
   }
 }
